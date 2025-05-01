@@ -135,3 +135,23 @@ def statistik_dari_distribusi(df):
         "Kurtosis": kurtosis,
         "Jenis Kurtosis": jenisKurtosis
     }
+
+# ===== Output Program =====
+print("=== Program Statistik Deskriptif dan Distribusi Frekuensi ===")
+data = inputData()
+data_array = np.array(data)
+
+# Tabel distribusi frekuensi
+df_freq = distribusiFrekuensi(data_array)
+
+# Cetak tabel distribusi frekuensi
+print("\nTabel Distribusi Frekuensi:")
+print(df_freq.to_string(index=False))  # tanpa index kiri
+
+# Hitung statistik dari distribusi frekuensi
+stat_freq = statistik_dari_distribusi(df_freq)
+
+# Cetak statistik deskriptif
+print("\nStatistik Deskriptif (berdasarkan tabel distribusi frekuensi):")
+for key, value in stat_freq.items():
+    print(f"{key:<20}: {value:.2f}")
