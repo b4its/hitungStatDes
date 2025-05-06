@@ -160,3 +160,22 @@ for key, value in stat_freq.items():
     else:
         print(f"{key:<20}: {value}")
         
+# Visualisasi Histogram
+plt.figure(figsize=(8, 5))
+plt.hist(data_array, bins='sturges', edgecolor='black')
+plt.title("Data Histogram")
+plt.xlabel("Nilai")
+plt.ylabel("Frekuensi")
+plt.grid(True, linestyle="--", alpha=0.5)
+plt.tight_layout()
+plt.show()
+
+# Visualisasi Data Polygon
+plt.figure(figsize=(8, 5))
+plt.plot(df_freq["Titik Tengah"], df_freq["Frekuensi"], marker='o', linestyle='-', color='orange')
+plt.title("Data Polygon")
+plt.xlabel("Titik Tengah")
+plt.ylabel("Frekuensi")
+plt.grid(True, linestyle="--", alpha=0.5)
+plt.tight_layout()
+plt.show()
